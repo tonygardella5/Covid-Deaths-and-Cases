@@ -30,7 +30,7 @@ def index():
 
     # Query MongoDB and pass mars data into HTML template to display the data
     covid = mongo.db.covid_data.find_one()
-    return render_template("index.html")
+    return render_template("index2.html")
 
 ##################################################
 # Set up scrape route to import scrape_mars script and call scrape function

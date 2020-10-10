@@ -1,7 +1,7 @@
 #################################################
 # MongoDB and Flask Application
 # Use MongoDB with Flask templating to create a new HTML page that displays
-# all of the information from datasource
+# all of the information from the datasource
 
 ##################################################
 # Import dependencies
@@ -30,7 +30,7 @@ def index():
 
     # Query MongoDB and pass mars data into HTML template to display the data
     covid = mongo.db.covid_data.find_one()
-    return render_template("index.html", covid = covid)
+    return render_template("index.html")
 
 ##################################################
 # Set up scrape route to import scrape_mars script and call scrape function

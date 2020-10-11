@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Covid Dashboard</title>
+
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen">
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="static/css/styles.css" media="screen">
+
+  </head>
+
+  <body>
+    <!-- Set up navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Modify navbar to ensure use by mobile devices -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-12 phone-nav">
+              <a class="navbar-brand" href="#" id="logo">Covid Analysis</a>
+            </div>
+          </div>
+
+          <!-- Toggling info for nav links and forms -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="visualizations/temp.html">Max Temperature</a></li>
+                  <li><a href="visualizations/humidity.html">Humidity</a></li>
+                  <li><a href="visualizations/cloudiness.html">Cloudiness</a></li>
+                  <li><a href="visualizations/wind.html">Wind Speed</a></li>
+                </ul>
+              </li>
+              <li><a href="comparison.html">Comparison</a></li>
+              <li><a href="templates/table.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- "Home page" container -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-8">
+          <article class="description-content">
+            <h2 class="description-header">City Latitude Project Summary:</h2>
+            <hr class="description-hr"/>
+            <img src="assets/images/Fig1.png" alt="" id="description-image"/>
+            <p>Does the weather change the closer you get to the equator?  Let's use data to find out!
+              A Python script was written to visualize  the weather of over 500 cities across the world
+              with varying distances from the equator.  This dataset was assembled using an
+              OpenWeatherMap API call.  For the list of specific cities used in this study, click Data on the
+              navigation menu.</p>
+            <p>Once the data was gathered, Matplotlib, a Python library, was used to plot max temperature, humidity,
+              cloudiness and wind speed vs the city's latitude.  For more information, click on the Visualizations or
+              Comparison on the navigation menu.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-4">
+
+          <!-- Latitude vs X Visualizations imageNav Area -->
+          <section id="imageNav-area">
+            <div class="imageNav-content">
+              <h3 class="imageNav-header">Latitude vs X Visualizations</h3>
+              <hr />
+              <div id="images">
+                <a href="visualizations/temp.html"><img src="assets/images/Fig1.png" alt="Latitude vs Max Temperature" class="imageNav-photo"></a>
+                <a href="visualizations/humidity.html"><img src="assets/images/Fig2.png" alt="Latitude vs Humidity" class="imageNav-photo"></a>
+                <a href="visualizations/cloudiness.html"><img src="assets/images/Fig3.png" alt="Latitude vs Cloudiness" class="imageNav-photo"></a>
+                <a href="visualizations/wind.html"><img src="assets/images/Fig4.png" alt="Latitude vs Wind Speed" class="imageNav-photo"></a>
+              </div>
+            </div>
+          </section>
+          <!-- End of the Latitude vs X Visualizations imageNav Area -->
+
+        </div>
+      </section>
+    </div>
+    <!-- End of "home page" container -->
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+      <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

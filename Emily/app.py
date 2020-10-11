@@ -1,8 +1,5 @@
 #################################################
 # MongoDB and Flask Application
-# Use MongoDB with Flask templating to create a new HTML page that displays
-# all of the information from the datasource
-
 
 ##################################################
 # Import dependencies
@@ -22,13 +19,14 @@ mongo = PyMongo(app)
 
 ##################################################
 # Set up routes
+
 ##################################################
 # Return the homepage
 @app.route("/")
 def index():
 # Query MongoDB and pass covid data into HTML template to display the data
     covid_data = mongo.db.covid.find()
-    return render_template("index2.html", covid_data=covid_data)
+    return render_template("index.html", covid_data=covid_data)
 
 
 ##################################################

@@ -6,15 +6,13 @@
 
 ##################################################
 # Import dependencies
-from flask import Flask, render_template, redirect, url_for
-import pymongo as PyMongo
+from flask import Flask, render_template
 from flask_pymongo import PyMongo
 
 
 ##################################################
 # Flask setup
 app = Flask(__name__)
-
 
 ##################################################
 # Database setup
@@ -28,17 +26,16 @@ mongo = PyMongo(app)
 # Return the homepage
 @app.route("/")
 def index():
-
 # Query MongoDB and pass covid data into HTML template to display the data
-    covid_data = mongo.db.covid_data.find_one()
+    covid_data = mongo.db.covid.find()
     return render_template("index2.html", covid_data=covid_data)
 
 
 ##################################################
-# Return the heatmap
-@app.route("/heatmap")
+# Return the spikemap
+@app.route("/spikemap")
 def heatmap():
-    return render_template("heatmap.html")
+    return render_template("spikemap.html")
 
 
 ##################################################
@@ -50,7 +47,7 @@ def linegraph():
 
 ##################################################
 # Return the dataset
-@app.route("/dataset")
+@app.route("/data")
 def dataset():
     return render_template("table.html")
 

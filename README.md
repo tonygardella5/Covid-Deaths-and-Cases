@@ -1,6 +1,6 @@
 # Project 2 - Covid Data Analysis
 ## Scope
-This project covers COVID-19 cases and deaths in the U.S. from March 2020 to October 2020.  The results will be displayed with a spike map and a line graph. 
+This project analyzes COVID-19 cases and deaths in the U.S. from January 21st to October 3rd, 2020.  The results will be displayed with a spike map and a line graph. 
 ## Team Members
 * Neida Flores
 * Tony Gardella

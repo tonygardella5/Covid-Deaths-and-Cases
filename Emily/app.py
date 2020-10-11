@@ -22,14 +22,16 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/covid"
 mongo = PyMongo(app)
 
-
 ##################################################
 # Set up routes
 ##################################################
 # Return the homepage
 @app.route("/")
 def index():
-    return render_template("index.html")
+
+# Query MongoDB and pass covid data into HTML template to display the data
+    covid_data = mongo.db.covid_data.find_one()
+    return render_template("index2.html", covid_data=covid_data)
 
 
 ##################################################

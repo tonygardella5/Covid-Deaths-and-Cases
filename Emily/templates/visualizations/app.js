@@ -27,7 +27,7 @@ var options = {
     align: 'left',
     style: {
       fontSize: "16px",
-      color: '#666'
+      color: '#999'
     }
   },
   fill: {
@@ -57,6 +57,11 @@ var options = {
     title: {
       text: 'Engagement',
     },
+    labels: {
+        style: {
+            colors: "#999"
+        }
+    }
   }
   };
 

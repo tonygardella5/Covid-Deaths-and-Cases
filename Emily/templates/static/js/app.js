@@ -1,45 +1,73 @@
-      
-        var options = {
-            series: [{
-            name: 'Website Blog',
-            type: 'column',
-            data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
-          }, {
-            name: 'Social Media',
-            type: 'line',
-            data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
-          }],
-            chart: {
-            height: 350,
-            type: 'line',
-          },
-          stroke: {
-            width: [0, 4]
-          },
-          title: {
-            text: 'Traffic Sources'
-          },
-          //dataLabels: {
-          //  enabled: true,
-          //  enabledOnSeries: [1]
-          //},
-          labels: ['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '06 Jan 2001', '07 Jan 2001', '08 Jan 2001', '09 Jan 2001', '10 Jan 2001', '11 Jan 2001', '12 Jan 2001'],
-          xaxis: {
-            type: 'datetime'
-          },
-          yaxis: [{
-            title: {
-              text: 'Website Blog',
-            },
-          
-          }, {
-            opposite: true,
-            title: {
-              text: 'Social Media'
-            }
-          }]
-          };
-  
-          var chart = new ApexCharts(document.querySelector("#chart"), options);
-          chart.render();
-        
+
+d3.csv("/../data/final_data.csv", d3.autoType).then(function(allData) {
+  var deathAxis = [1];
+  var casesAxis = [];
+  var xAxis = []
+  for (var i=0; i < allData.length; i+=10) {
+    if( allData[i].state == "TN")
+    { if (allData[i].county == "Davidson"){
+      deathAxis.push(allData[i].deaths);
+      casesAxis.push(allData[i].cases);
+      xAxis.push(allData[i].date);
+    //console.log(deathAxis);
+    //console.log(allData[i].deaths);
+  }}};
+  console.log(deathAxis);
+  console.log(casesAxis);
+  console.log(allData.length);
+ // var filteredData = data.filter(function(d) 
+
+     //   });    
+    //var deathAxis = (allData, function(d){return d.deaths;})
+
+    var options = {
+      series: [{
+      name: 'Cases',
+      type: 'column',
+      data: [casesAxis]
+    }, {
+      name: 'Deaths',
+      type: 'line',
+      data: [deathAxis]
+    }],
+      chart: {
+      height: 350,
+      type: 'line',
+    },
+    stroke: {
+      width: [0, 1]
+    },
+    title: {
+      text: 'COVID-19 Cases and Deaths'
+    },
+    //dataLabels: {
+    //  enabled: true,
+    //  enabledOnSeries: [1]
+    //},
+    labels: [xAxis],
+    xaxis: {
+      type: 'datetime'
+    },
+    yaxis: [{
+      title: {
+        text: 'Cases',
+      },
+    
+    }, {
+      opposite: true,
+      title: {
+        text: 'Deaths'
+      }
+    }]
+    };
+    //console.log(deathAxis);
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+
+
+
+
+
+
+
+});

@@ -1,20 +1,24 @@
 
 d3.csv("/../data/final_data.csv", d3.autoType).then(function(allData) {
-  var deathAxis = [1];
+  var deathAxis = [];
   var casesAxis = [];
-  var xAxis = []
-  for (var i=0; i < allData.length; i+=10) {
-    if( allData[i].state == "TN")
-    { if (allData[i].county == "Davidson"){
+  var xAxis = [];
+  var chosenCounty = "Davidson";
+  var chosenState = "TN"
+  for (var i=0; i < allData.length; i+=1) {
+    if( allData[i].state == chosenState)
+    { if (allData[i].county == chosenCounty){
       deathAxis.push(allData[i].deaths);
       casesAxis.push(allData[i].cases);
       xAxis.push(allData[i].date);
     //console.log(deathAxis);
     //console.log(allData[i].deaths);
-  }}};
-  console.log(deathAxis);
-  console.log(casesAxis);
-  console.log(allData.length);
+  }
+}
+};
+  //console.log(deathAxis);
+  //console.log(casesAxis);
+  //console.log(allData.length);
  // var filteredData = data.filter(function(d) 
 
      //   });    
@@ -22,29 +26,26 @@ d3.csv("/../data/final_data.csv", d3.autoType).then(function(allData) {
 
     var options = {
       series: [{
-      name: 'Cases',
-      type: 'column',
-      data: [casesAxis]
-    }, {
       name: 'Deaths',
+      type: 'column',
+      data: deathAxis
+    }, {
+      name: 'Cases',
       type: 'line',
-      data: [deathAxis]
+      data: casesAxis
     }],
       chart: {
-      height: 350,
+      height: 400,
       type: 'line',
     },
     stroke: {
-      width: [0, 1]
+      width: [0, 5]
     },
     title: {
-      text: 'COVID-19 Cases and Deaths'
+      text: `COVID-19 Cases and Deaths for ${chosenCounty}, ${chosenState}`
     },
-    //dataLabels: {
-    //  enabled: true,
-    //  enabledOnSeries: [1]
-    //},
-    labels: [xAxis],
+
+    labels: xAxis,
     xaxis: {
       type: 'datetime'
     },

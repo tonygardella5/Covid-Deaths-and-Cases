@@ -25,8 +25,8 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
 # Query MongoDB and pass covid data into HTML template to display the data
-    covid = mongo.db.covid_data.find_one()
-    return render_template("index.html", covid=covid)
+    #covid = mongo.db.covid_data.find_one()
+    return render_template("index.html")
 
 
 ##################################################
@@ -41,13 +41,6 @@ def spikemap():
 @app.route("/linegraph")
 def linegraph():
     return render_template("line.html")
-
-
-##################################################
-# Return the dataset
-@app.route("/data")
-def dataset():
-    return render_template("table.html")
 
 
 ##################################################

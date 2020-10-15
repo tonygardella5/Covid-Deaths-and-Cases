@@ -14,8 +14,7 @@ This project analyzes COVID-19 cases and deaths in the U.S. from January 21st to
 * date, county, state, fips, cases, deaths, population, latitude, longitude, cases as % of population, deaths as % of population
 ## Languages/Libraries Used
 * Python - Pandas, Numpy, Flask, PyMongo 
-* HTML - Bootstrap
-* CSS - Leaflet
+* HTML/CSS - Bootstrap
 * Javascript - Leaflet, D3, APEXCHARTS
 ## Database Used
 * MongoDB

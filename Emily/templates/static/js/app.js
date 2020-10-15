@@ -5,25 +5,34 @@ d3.csv("/../../../../data/final_data.csv", d3.autoType).then(function(allData) {
   var xAxis = [];
   var chosenCounty = "Davidson";
   var chosenState = "TN"
-  for (var i=0; i < allData.length; i+=1) {
+  var allState = [];
+  var allCounty = [];
+  
+  for (var i=0; i < allData.length; i++) {
+    allState.push(allData[i].state);    
     if( allData[i].state == chosenState)
-    { if (allData[i].county == chosenCounty){
+    { allCounty.push(allData[i].county);
+       if (allData[i].county == chosenCounty){
       deathAxis.push(allData[i].deaths);
       casesAxis.push(allData[i].cases);
       xAxis.push(allData[i].date);
-    //console.log(deathAxis);
-    //console.log(allData[i].deaths);
-  }
+  }}};
+
+const uniqueState = [...new Set(allState)];
+    console.log(uniqueState);
+const uniqueCounty = [...new Set(allCounty)];
+    console.log(uniqueCounty);
+
+function updateState() {
+
 }
-};
-  //console.log(deathAxis);
-  //console.log(casesAxis);
-  //console.log(allData.length);
- // var filteredData = data.filter(function(d) 
+function updateCounty() {
 
-     //   });    
-    //var deathAxis = (allData, function(d){return d.deaths;})
-
+}
+//create functions for updating. you are going to need to append the dropdown lists with unique
+//lists.
+d3.select("state").on("change", updateState);
+d3.select("county").on("change", updateCounty);
     var options = {
       series: [{
       name: 'Deaths',

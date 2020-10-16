@@ -33,7 +33,7 @@ def index():
 # Return the spikemap
 @app.route("/spikemap")
 def spikemap():
-    return render_template("spikemap.html")
+    return render_template("spikemap.js")
 
 
 ##################################################

@@ -91,7 +91,7 @@ function updateState(){
     chart: {
     height: 400,
     type: 'line',
-    background: '#d1d1d1'
+    background: '#EBEBEB'
   },
   stroke: {
     width: [0, 5]
@@ -165,7 +165,7 @@ var options = {
   chart: {
   height: 400,
   type: 'line',
-  background: '#d1d1d1'
+  background: '#EBEBEB'
 },
 stroke: {
   width: [0, 5]
@@ -208,7 +208,7 @@ var options = {
   chart: {
   height: 400,
   type: 'line',
-  background: '#d1d1d1'
+  background: '#EBEBEB'
 },
 stroke: {
   width: [0, 5]

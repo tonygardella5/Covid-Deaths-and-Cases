@@ -3,8 +3,8 @@ d3.csv("/../../../../data/final_data.csv", d3.autoType).then(function(allData) {
   var deathAxis = [];
   var casesAxis = [];
   var xAxis = [];
-  var chosenCounty = "Sussex";
-  var chosenState = "DE"
+  var chosenCounty = "Madison";
+  var chosenState = "TN"
   var allState = [];
   var allCounty = [];
   var uniqueState = [];
@@ -66,7 +66,7 @@ for(var i = 0; i < options.length; i++) {
 }
 }
 function updateState(){
-  chart.destroy();
+  //chart.destroy();
   var e = document.getElementById("state");
     chosenState = e.options[e.selectedIndex].text;
     //console.log(chosenState);
@@ -262,11 +262,13 @@ yaxis: [{
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render(); 
 
-
+function destroyChart(){
+ chart.destroy();
+};
    
-    d3.select("#state").on("change", updateState);
-   // d3.select("#county").on("change", chart.destroy());
-    d3.select("#county").on("change", updateCounty);
+    d3.select("#state").on("change", updateState)
+    //d3.select("#state").on("change", destroyChart);
+    d3.select("#county").on("change", function(d){destroyChart(d);updateCounty(d);});
     
 
 

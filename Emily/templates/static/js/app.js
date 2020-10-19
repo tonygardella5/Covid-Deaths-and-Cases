@@ -106,13 +106,13 @@ function updateState(){
   },
   yaxis: [{
     title: {
-      text: 'Cases',
+      text: 'Deaths',
     },
   
   }, {
     opposite: true,
     title: {
-      text: 'Deaths'
+      text: 'Cases'
     }
   }]
   };
@@ -180,13 +180,13 @@ xaxis: {
 },
 yaxis: [{
   title: {
-    text: 'Cases',
+    text: 'Deaths',
   },
 
 }, {
   opposite: true,
   title: {
-    text: 'Deaths'
+    text: 'Cases'
   }
 }]
 };
@@ -223,13 +223,13 @@ xaxis: {
 },
 yaxis: [{
   title: {
-    text: 'Cases',
+    text: 'Deaths',
   },
 
 }, {
   opposite: true,
   title: {
-    text: 'Deaths'
+    text: 'Cases'
   }
 }]
 };

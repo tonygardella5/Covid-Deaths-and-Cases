@@ -91,7 +91,7 @@ function updateState(){
     chart: {
     height: 400,
     type: 'line',
-    background: '#b5b5b5'
+    background: '#d1d1d1'
   },
   stroke: {
     width: [0, 5]
@@ -165,7 +165,7 @@ var options = {
   chart: {
   height: 400,
   type: 'line',
-  background: '#b5b5b5'
+  background: '#d1d1d1'
 },
 stroke: {
   width: [0, 5]
@@ -208,7 +208,7 @@ var options = {
   chart: {
   height: 400,
   type: 'line',
-  background: '#b5b5b5'
+  background: '#d1d1d1'
 },
 stroke: {
   width: [0, 5]
@@ -238,6 +238,6 @@ chart.render();
 function destroyChart(){
  chart.destroy();
 };
-    d3.select("#state").on("change", function(d){destroyChart(d);updateState(d);});
-    d3.select("#county").on("change", function(d){destroyChart(d);updateCounty(d);});
+d3.select("#state").on("change", function(d){destroyChart(d);updateState(d);});
+d3.select("#county").on("change", function(d){destroyChart(d);updateCounty(d);});
 });

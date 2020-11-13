@@ -1,5 +1,5 @@
 
-d3.csv("data/final_data.csv", d3.autoType).then(function(allData) {
+d3.csv("/data/final_data.csv", d3.autoType).then(function(allData) {
   var deathAxis = [];
   var casesAxis = [];
   var xAxis = [];
